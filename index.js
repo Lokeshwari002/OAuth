@@ -85,6 +85,10 @@ app.get("/auth/user", (req, res) => {
     }
   });
 
+  app.get("/", (req, res) => {
+    res.send("✅ Backend is up and running on Render!");
+  })
+
 const PORT=process.env.PORT || 5000
 
 app.listen(PORT,()=>{
