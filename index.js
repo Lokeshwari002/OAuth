@@ -10,7 +10,7 @@ const session=require('express-session')
 let app=express();
 app.use(express.json());
 app.use(cors({
-    origin:"http://localhost:5177",
+    origin:"http://localhost:5173",
     credentials:true
 }));
 
@@ -63,8 +63,8 @@ app.get("/auth/google",passport.authenticate("google",{scope:["profile","email"]
 // google sends back data here
 
 app.get("/auth/google/callback",passport.authenticate("google",{
-    successRedirect:"http://localhost:5177/dashboard",
-    failureRedirect:"http://localhost:5177/login"
+    successRedirect:"http://localhost:5173/dashboard",
+    failureRedirect:"http://localhost:5173/login"
 }))
 
 
@@ -72,7 +72,7 @@ app.get("/auth/google/callback",passport.authenticate("google",{
 
 app.get("/auth/logout",(req,res)=>{
     req.logOut(()=>{
-        res.redirect("http://localhost:5177")
+        res.redirect("http://localhost:5173")
     })
 })
 
