@@ -89,7 +89,7 @@ app.get("/auth/user", (req, res) => {
     res.send("✅ Backend is up and running on Render!");
   })
 
-const PORT=process.env.PORT || 5000
+const PORT=process.env.DB_PORT
 
 app.listen(PORT,()=>{
     console.log(`server is Listening at ${PORT}`)
